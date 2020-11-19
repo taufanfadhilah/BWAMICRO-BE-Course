@@ -18,7 +18,7 @@ class CreateReviews extends Migration
             $table->integer('user_id');
             $table->foreignId('course_id')->constrained('courses')->cascadeOnDelete();
             $table->integer('rating')->default(1);
-            $table->longText('notes')->nullable();
+            $table->longText('note')->nullable();
             $table->unique(['course_id', 'user_id']);
             $table->timestamps();
         });
