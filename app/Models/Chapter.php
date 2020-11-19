@@ -18,6 +18,6 @@ class Chapter extends Model
 
     public function lessons()
     {
-        return $this->hasMany('App\Lesson')->orderBy('id', 'ASC');
+        return $this->hasMany('App\Models\Lesson')->orderBy('id', 'ASC');
     }
 }
