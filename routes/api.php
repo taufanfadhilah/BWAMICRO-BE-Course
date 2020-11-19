@@ -20,3 +20,27 @@ Route::get('mentors/{id}', 'MentorController@show');
 Route::post('mentors', 'MentorController@create');
 Route::put('mentors/{id}', 'MentorController@update');
 Route::delete('mentors/{id}', 'MentorController@destroy');
+
+// Courses Routes
+Route::get('courses', 'CourseController@index');
+Route::post('courses', 'CourseController@create');
+Route::put('courses/{id}', 'CourseController@update');
+Route::delete('courses/{id}', 'CourseController@destroy');
+
+// Chapters Routes
+Route::get('chapters', 'ChapterController@index');
+Route::get('chapters/{id}', 'ChapterController@show');
+Route::post('chapters', 'ChapterController@create');
+Route::put('chapters/{id}', 'ChapterController@update');
+Route::delete('chapters/{id}', 'ChapterController@destroy');
+
+// Lesson Routes
+Route::get('lessons', 'LessonController@index');
+Route::get('lessons/{id}', 'LessonController@show');
+Route::post('lessons', 'LessonController@create');
+Route::put('lessons/{id}', 'LessonController@update');
+Route::delete('lessons/{id}', 'LessonController@destroy');
+
+// Image Course Routes
+Route::post('image-courses', 'ImageCourseController@create');
+Route::delete('image-courses/{id}', 'ImageCourseController@destroy');
