@@ -126,7 +126,7 @@ class ChapterController extends Controller
         ]);
     }
 
-    public function destory($id)
+    public function destroy($id)
     {
         $chapter = Chapter::find($id);
         if (!$chapter) {
