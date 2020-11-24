@@ -13,7 +13,7 @@ function getUser($userId)
         return [
             'status' => 'error',
             'http_code' => 500,
-            'message' => 'server unavailable'
+            'message' => 'service user unavailable'
         ];
     }
 }
@@ -38,7 +38,24 @@ function getUserByIds($userIds = [])
         return [
             'status' => 'error',
             'http_code' => 500,
-            'message' => 'server unavailable'
+            'message' => 'service user unavailable'
+        ];
+    }
+}
+
+function postOrder($params)
+{
+    $url = env('SERVICE_ORDER_PAYMENT_URL').'api/orders';
+    try {
+        $response = Http::post($url, $params);
+        $data = $response->json();
+        $data['http_code'] = $response->getStatusCode();
+        return $data;
+    } catch (\Throwable $th) {
+        return [
+            'status' => 'error',
+            'http_code' => 500,
+            'message' => 'service order unavailable'
         ];
     }
 }

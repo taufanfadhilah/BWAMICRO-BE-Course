@@ -49,6 +49,7 @@ Route::delete('image-courses/{id}', 'ImageCourseController@destroy');
 // My Course Routes
 Route::post('my-courses', 'MyCourseController@create');
 Route::get('my-courses', 'MyCourseController@index');
+Route::post('my-courses/premium', 'MyCourseController@createPremiumAccess');
 
 // Review Routes
 Route::post('reviews', 'ReviewController@create');
